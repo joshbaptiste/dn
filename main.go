@@ -21,34 +21,20 @@ func main() {
                     Usage: "encrypt this note",
             },
                 cli.StringFlag{
-                    Name: "dec",
-                    Value: false,
-                    Usage: "decrypt this note",
+                    Name: "subject, s",
+                    Value: "",
+                    Usage: "Subject of this node",
             },
-                cli.BoolFlag{
-                    Name: "pass, p",
-                    Usage: "password for [enc|dec]cryption",
+                cli.StringFlag{
+                    Name: "body, b",
+                    Value: "",
+                    Usage: "Body of the note",
             },
 
             Name: "del",
             Aliases:    []string{"d"},
-            Usage:  "del local note",
+            Usage:  "delete a local note",
+            Value: "",
             Action:  delNote,
-            Flags: []cli.Flag{
-                cli.StringFlag{
-                    Name: "enc",
-                    Value: false,
-                    Usage: "encrypt this note",
-            },
-                cli.StringFlag{
-                    Name: "dec",
-                    Value: false,
-                    Usage: "decrypt this note",
-            },
-                cli.BoolFlag{
-                    Name: "pass, p",
-                    Usage: "password for [enc|dec]cryption",
-            },
-            Name: "del"
 },
 }
