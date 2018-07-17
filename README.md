@@ -22,7 +22,7 @@
     dn [g|get] <id> [--server ip:port]
     dn --server address[:port]
 
-## Default Output
+### Default Output
 ```bash
 josh@node $ dn
 id | user |  title                          updated 
@@ -70,9 +70,9 @@ josh@client $ dn s linux # incase-sensitive Server title search
 josh@client $ dn s -b linux # incase-sensitive Server body search 
 ```
 ## Running a Server
-    dn can also run as a server where notes can be sent to a central server (Please read Limitations of server running)
+- dn can also run as a server where notes can be sent to a central server (Please read Limitations of server running)
 
-### Server Usage
+#### Server Usage
     dn --sip <Listening Address>  --name <Unique Server Name> [ --log <path/to/logfile.log> ] [--port 6464] [--allow-write] 
     
 #### Server Example 
@@ -81,7 +81,7 @@ josh@server $ dn --sip 10.10.10.10 --port 6464 (default TCP 6464) --name 'Josh N
 Starting Server 'Josh Notes' on 10.10.10.10:6464 (Writes allowed) 
 ```
 
-### Display server notes
+#### Display server notes
 ```sh
 # If Server is NOT ReadOnly
 josh@client $ dn --server 10.10.10.10  #no need to specify port if default is used --server address:port
@@ -89,7 +89,7 @@ josh@client $ DN_SERVER=10.10.10.10:6464 dn # if DN_SERVER env variable is set s
 josh@client $ dn e 0 # if "dn_server" is set in config db (dn uses id 0 as it's config) it will be used and conect to server
 josh@client $ dn -l # force local note listing regardless of above settings 
 ```
-### Search Server Notes
+#### Search Server Notes
 ```sh
 # Assuming DN_SERVER variable is set or dn_server config is set or --server is used
 josh@client $ dn s linux # incase-sensitive Server title search 
@@ -97,7 +97,7 @@ josh@client $ dn s -b linux # incase-sensitive Server body search
 josh@client $ dn s -l linux # force local search regardless of server settings 
 ```
 
-### Delete server notes
+#### Delete server notes
 ```sh
 # If Server is NOT ReadOnly and your username matches username of the corresponding note[s]
 josh@client $ dn d 100 --server 10.10.10.10  # Delete server note 100
@@ -106,7 +106,7 @@ josh@client $ dn d 13 # Assuming DN_SERVER variable is set or dn_server config i
 josh@client $ dn d 13 -l  # delete local note 13 regardless of above settings 
 ```
 
-### Push notes to Server
+#### Push notes to Server
 ```sh
 #If Server is NOT ReadOnly and your username matches username of the corresponding note[s]
 josh@client $ dn p 100 --server 10.10.10.10  # Push local note 100 to Server appending 
@@ -116,7 +116,7 @@ josh@client $ dn p 13 --clobber 41  # push local note 13 and overwrite server no
 josh@client $ dn p --all #push all local notes appending to server
 ```
 
-### Get notes from server
+#### Get notes from server
 ```sh
 josh@client $ dn g 100 --server 10.10.10.10  # Get Server note 100 and append locally
 josh@client $ DN_SERVER=10.10.10.10:6464 dn g 4 # get server note 4 and append locally
@@ -130,7 +130,7 @@ DN_SERVER - <Host>[:port] # DN_SERVER=10.10.10.5:1234
 DN_CONFIG - overrides default config path (by default client creates $HOME/.config/dn.json store/config file)
 ```
 
-## Inspiration
+### Inspiration
 - I wanted a simple note taking and command line snippet appplication for saving hundreds of my Linux/BSD command snippets  and notes locally (as we are retricted from using online tools), but with only some of the features of a full blown note taking app and be able to share with colleagues at work who can also add their cool snippets. 
 
 ### Server Limitations
