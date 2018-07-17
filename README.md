@@ -35,21 +35,21 @@ id | user |  title                          updated
 6 | fred |  LQS view en[de]-queue rates     2016-07-20 16:42:21
 ```
 
-### Adding notes
+#### Adding notes
 ```bash
 josh@host $  dn a "First snippet with no body"
 josh@host $  dn a "Second snippet with body" -b "Body of my snippet"
 josh@host $  dn a "Third snippet with body from EDITOR"  -e 
 josh@host $  echo "body from here" | dn a "Fourth snippet with body from STDIN"  -b -
 ```
-### Display notes
+#### Display notes
 ```sh
 josh@host $ dn # Display notes (if DN_SERVER is defined or in config, dn will display server side notes, add -l to force local note listings)
 josh@host $ dn 1 # Display note 1
 josh@host $ dn --sort t --reverse # Display notes sorted by titles in reverse order (default sort is date DESC)
 josh@host $ dn 0 # Displays sample DN usages and stores server config not displayed by default only local
 ```
-### Editing notes
+#### Editing notes
 ```bash
 josh@host $  dn e # By default edits last node in EDITOR
 josh@host $  dn e 12 # Edit note 12 in EDITOR
@@ -57,14 +57,14 @@ josh@host $  echo "Replace last note body with this" | dn e -
 josh@host $  echo "Replace note body #2 with this" | dn e 2 - 
 josh@host $ dn e 0 # to edit note config
 ```
-### Deleting notes
+#### Deleting notes
 ```bash
 josh@host $ dn d       # deletes last note
 josh@host $ dn d 12 15 # delete notes 12 and 15
 josh@host $ dn d 16-30  # delete range of notes 16 through 30
 ```
 
-### Search Notes
+#### Search Notes
 ```sh
 josh@client $ dn s linux # incase-sensitive Server title search 
 josh@client $ dn s -b linux # incase-sensitive Server body search 
