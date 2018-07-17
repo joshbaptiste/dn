@@ -1,6 +1,6 @@
 ## Distributed Notes (DN) - Command line note snippet application
 
-- A simple, Client/Server command line note taking tool written in Nim - Inspired by (theca)[https://github.com/pwoolcoc/theca], (pet)[https://github.com/knqyf263/pet] and (task spooler)[http://viric.name/soft/ts/]
+- A simple, Client/Server command line note taking tool written in Nim - Inspired by [theca](https://github.com/pwoolcoc/theca), [pet](https://github.com/knqyf263/pet) and [task spooler](http://viric.name/soft/ts/)
 ## Features
 - Client/Server Support
 - JSON profile format for easy scripting/integration
