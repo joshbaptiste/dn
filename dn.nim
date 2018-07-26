@@ -21,5 +21,14 @@ proc parseConfigFile(file: string): void =
         var cmd = initOptParser()
         for kind, key, val in cmd.getopt():
             if kind == cmdLongOption:
-                if key == "config":
-                    parseConfigFile(val)
+                case key:
+                    of "config":
+                        let configFile = val
+                    of "json":
+                        let jsonOption = true
+                    of "reverse":
+                        let reverseOption = true
+                    of "limit":
+                        let limitOption = true
+                    of "sort":
+                        let sortOption = val                                                   
