@@ -10,6 +10,31 @@ import (
 func main() {
 	app := cli.NewApp()
 
+	app.Flags = []cli.Flag{
+		cli.StringFlag{
+			Name:  "sort, s",
+			Value: "",
+			Usage: "Sort output notes by date or title",
+		},
+		cli.StringFlag{
+			Name:  "server, s",
+			Value: "",
+			Usage: "Start server ipaddress[:port]",
+		},
+		cli.StringFlag{
+			Name:  "reverse, r",
+			Usage: "Reverse output of notes",
+		},
+		cli.StringFlag{
+			Name:  "limit, l",
+			Value: "",
+			Usage: "Limit output of notes on screen",
+		},
+		cli.StringFlag{
+			Name:  "json, j",
+			Usage: "Output notes in json",
+		},
+	}
 	app.Commands = []cli.Command{
 		{
 			Name:    "add",
